@@ -1,7 +1,0 @@
-{
-  "name": "MealsApp",
-  "integrations": {
-    "capacitor": {}
-  },
-  "type": "angular-standalone"
-}
