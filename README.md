@@ -3,8 +3,8 @@
 
 ## Getting Started
 To begin using this template, choose one of the following options to get started:
-* Clone the repo: `https://github.com/smart-meal/calorie-compass-front.git`
-* Fork the repo
+* Clone the repo: `https://github.com/smart-meal/calorie-compass-front.git`.
+* Fork the repo.
 
 ## Start the project
 The project is started with the regular ionic commands.
