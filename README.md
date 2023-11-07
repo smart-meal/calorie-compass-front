@@ -3,7 +3,7 @@
 
 ## Getting Started
 To begin using this template, choose one of the following options to get started:
-* Clone the repo: `(https://github.com/smart-meal/calorie-compass-front.git)https://github.com/smart-meal/calorie-compass-front.git`
+* Clone the repo: `[https://github.com/smart-meal/calorie-compass-front.git]https://github.com/smart-meal/calorie-compass-front.git`
 * Fork the repo
 
 ## Start the project
