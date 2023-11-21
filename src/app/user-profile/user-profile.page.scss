@@ -1,0 +1,28 @@
+ion-card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   
+    .profile-picture {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      margin: 0 auto;
+      display: block;
+      border-color: black;
+    }
+  }
+
+ion-title {
+    text-align: center;
+    width: 100%;
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+ion-card-title {
+    text-align: center;
+    width: 100%;
+}

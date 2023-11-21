@@ -25,3 +25,12 @@
 #container a {
   text-decoration: none;
 }
+
+ion-title {
+  text-align: center;
+  width: 100%;
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
