@@ -18,7 +18,7 @@ stages:
   - job: Build
     displayName: Build
     pool:
-      name: az400m03l03a-pool
+      name: local
       demands:
       - Agent.Name -equals wills-desktop
     steps:
