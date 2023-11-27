@@ -18,7 +18,9 @@ stages:
   - job: Build
     displayName: Build
     pool:
-      vmImage: ubuntu-latest
+      name: az400m03l03a-pool
+      demands:
+      - Agent.Name -equals wills-desktop
     steps:
     - task: Docker@2
       displayName: Build an image
