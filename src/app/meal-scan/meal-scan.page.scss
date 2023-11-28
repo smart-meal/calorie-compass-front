@@ -1,0 +1,28 @@
+.logo-image {
+    height: 500px; /* Adjust the height as needed */
+    width: auto; /* Maintain aspect ratio */
+    vertical-align: middle;
+    margin-right: 20px; /* Space between logo and title */
+    margin-bottom: 50px;
+  }
+
+  ion-title {
+    text-align: center;
+    width: 100%;
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  .container {
+    display: flex;
+    align-content: center;
+    justify-content: space-evenly; /* This will space out the buttons evenly */
+    padding: 10px;
+  }
+
+#take-picture, #upload-existing {
+    flex-grow: 1; /* This makes the buttons grow to fill the container */
+    margin: 0 5px; /* Adds a small margin between the buttons */
+  }

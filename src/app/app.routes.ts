@@ -25,5 +25,17 @@ export const routes: Routes = [
     path: 'meal-history',
     loadComponent: () => import('./meal-history/meal-history.page').then( m => m.MealHistoryPage)
   },
+  {
+    path: 'ai-chat',
+    loadComponent: () => import('./ai-chat/ai-chat.page').then( m => m.AiChatPage)
+  },
+  {
+    path: 'dashboard',
+    loadComponent: () => import('./dashboard/dashboard.page').then( m => m.DashboardPage)
+  },
+  {
+    path: 'meal-scan',
+    loadComponent: () => import('./meal-scan/meal-scan.page').then( m => m.MealScanPage)
+  },
 
 ];

@@ -1,0 +1,98 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button>
+        <ion-avatar class="profile-picture">
+          <img src="https://cdn.pixabay.com/photo/2016/04/26/07/57/woman-1353825_1280.png" alt="Profile Picture">
+        </ion-avatar>
+      </ion-button>
+    </ion-buttons>  
+    <ion-title>Dashboard</ion-title>
+    <ion-buttons slot="end">
+      <ion-button>
+        <ion-avatar class="settings">
+          <img src="https://cdn.pixabay.com/photo/2021/07/25/08/07/administration-6491208_1280.png" alt="Settings Button">
+        </ion-avatar>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+ 
+<ion-content>
+  <ion-card>
+    <ion-card-header>
+      Today's Progress
+    </ion-card-header>
+    <ion-card-content>
+      <!-- Pie Chart and Horizontal Progress Lines -->
+      <!-- Replace the following line with your pie chart component -->
+ 
+      <!-- Micronutritional Levels -->
+      <ion-title class="title">
+        Micronutrient Intake
+      </ion-title>
+      <ion-label color="primary">Calcium</ion-label>
+      <ion-item>
+        <ion-progress-bar value="0.8"></ion-progress-bar>
+      </ion-item>
+      <ion-label color="primary">Calcium</ion-label>
+      <ion-item>
+        <ion-progress-bar value="0.5"></ion-progress-bar>
+      </ion-item>
+      <ion-label color="primary">Vitamin C</ion-label>
+      <ion-item>
+        <ion-progress-bar value="0.3"></ion-progress-bar>
+      </ion-item>
+      <ion-label color="primary">Zinc</ion-label>
+      <ion-item>
+        <ion-progress-bar value="0.15"></ion-progress-bar>
+      </ion-item>
+      <ion-label color="primary">Potassium</ion-label>
+      <ion-item>
+        <ion-progress-bar value="0.4"></ion-progress-bar>
+      </ion-item>
+ 
+    </ion-card-content>
+  </ion-card>
+ 
+  <!-- Scrollable List of Recent Meals -->
+  <ion-item-divider color="light"> Recent Meals</ion-item-divider>
+  <ion-list>
+    <ion-item *ngFor="let meal of recentMeals">
+      <ion-thumbnail slot="start">
+        <ion-img [src]="meal.image"></ion-img>
+      </ion-thumbnail>
+      <ion-label>
+        <h2>{{ meal.name }}</h2>
+        <p>Calories: {{ meal.calories }}</p>
+        <p>Time: {{ meal.time }}</p>
+        <p>Date: {{ meal.date }}</p>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+</ion-content>
+
+<!-- Nav Bar -->
+<ion-footer>
+  <ion-toolbar>
+    <ion-grid>
+      <ion-row>
+        <ion-col size="2.5">
+          <ion-button expand="block" id="home">Home</ion-button>
+        </ion-col>
+        <ion-col size="2.5">
+          <ion-button expand="block" id="meal-history">Meal History</ion-button>
+        </ion-col>
+        <ion-col size="2.5">
+          <ion-button expand="block" id="add-meal">Add Meal</ion-button>
+        </ion-col>
+        <ion-col size="2.5">
+          <ion-button expand="block" id="ai-chat">AI Chat</ion-button>
+        </ion-col>
+        <ion-col size="2">
+          <ion-button expand="block" id="settings">Settings</ion-button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-toolbar>
+</ion-footer>

@@ -11,7 +11,7 @@ The project is started with the regular ionic commands.
 
 1. Run `npm install` to install all dependencies. If it gives an error, try running the command '-npm install -g @ionic/cli@latest --force'.
 2. Run the command '-npm install --force'.
-3. Run `ionic serve` to start the development environment.
+3. Run `ionic serve` to start the development environment. To create a new page, run `ionic generate page`.
 4. To build the project run `ionic build android` or `ionic build ios`. In order for you to build an iOS app, you need to run on MacOS.
 
 ## EndPoint Details
@@ -24,4 +24,10 @@ The project is started with the regular ionic commands.
 -User Profile Page: /user-profile
 
 -Meal History Page: /meal-history
+
+-Dashboard Page: /dashboard
+
+-Meal Scan Page: /meal-scan
+
+-AI Chat Page: /ai-chat
 
