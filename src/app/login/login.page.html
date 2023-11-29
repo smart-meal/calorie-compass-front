@@ -3,14 +3,14 @@
     <ion-buttons slot="start">
       <ion-back-button></ion-back-button>
     </ion-buttons>
-    <ion-title>Log In</ion-title>
+    <ion-title>LogIn</ion-title>
   </ion-toolbar>
 </ion-header>
 <ion-content>
   <form [formGroup]="loginForm" (ngSubmit)="SaveData()">
     <ion-item lines="full">
-      <ion-label class = "form-label" position="floating" for="emailid">Email</ion-label>
-      <ion-input class = "form-input" type="text"  id= "emailid" required formControlName ="emailid"></ion-input>
+      <ion-label class = "form-label" position="floating" for="username">Username</ion-label>
+      <ion-input class = "form-input" type="text"  id= "username" required formControlName ="username"></ion-input>
     </ion-item>
     <ion-item lines="full">
       <ion-label class = "form-label" position="floating" for = "password">Password</ion-label>
