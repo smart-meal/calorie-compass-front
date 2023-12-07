@@ -37,5 +37,9 @@ export const routes: Routes = [
     path: 'meal-scan',
     loadComponent: () => import('./meal-scan/meal-scan.page').then( m => m.MealScanPage)
   },
+  {
+    path: 'meal-detail',
+    loadComponent: () => import('./meal-detail/meal-detail.page').then( m => m.MealDetailPage)
+  },
 
 ];
