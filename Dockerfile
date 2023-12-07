@@ -10,8 +10,17 @@ RUN rm -rf node_modules
 
 RUN npm install --force
 RUN npm install -g @ionic/cli@latest --force
+#npx = node packedge manger that allows us to excute ngcc
+# semas to take non ivy libraries that ivy can complie
+#RUN npx ngcc --properties es2023 browser module main --frist-only --create-ivy-entrypoints
+#EXPOSE 8100
 
-EXPOSE 8100
+RUN ionic build
 
-CMD ["ionic", "serve"]
+
+FROM nginx:stable
+COPY --from=build /app/www/ /usr/share/nginx/html
+EXPOSE 80
+
+CMD ["ionic", "build"]
 
