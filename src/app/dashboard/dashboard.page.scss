@@ -14,7 +14,9 @@
   }
 
 .button-container {
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(n, 1fr);
+    gap: 10px;
     justify-content: space-evenly; /* Distributes space around items */
   }
   
@@ -23,4 +25,12 @@
     margin: 0 5px;
 }
 
-  
+
+.ion-icon {
+  color: rgb(255, 255, 255);
+}
+
+.ion-col.center-any-object {
+  display: flex;
+  justify-content: center;
+  }

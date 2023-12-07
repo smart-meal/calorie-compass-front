@@ -20,7 +20,13 @@ export class DashboardPage implements OnInit {
     ];
   constructor() {}
 
-  ngOnInit() {
+  ngOnInit() {}
+
+  addMeal(name: string, image: string, calories: string, time: string, date: string) {
+    const newMeal = { name, image, calories, time, date };
+    this.recentMeals.push(newMeal);
   }
+  // You can call this method when the user inputs new meal details.
+  // For instance, addMeal('Snack', 'assets/icon/snack_food.jpg', '150', '03:30 PM', '2023-01-02');
 
 }
