@@ -7,14 +7,18 @@
   </ion-toolbar>
 </ion-header>
 <ion-content>
-  <form>
+  <form [formGroup]="registrationForm" (ngSubmit)="SaveData()">
     <ion-item lines="full">
-      <ion-label position="floating">Email</ion-label>
-      <ion-input type="text" required></ion-input>
+      <ion-label class="form-label" position="floating" for="username">Username</ion-label>
+      <ion-input class="form-input" type="text" id="username" required formControlName="username"></ion-input>
     </ion-item>
     <ion-item lines="full">
-      <ion-label position="floating">Password</ion-label>
-      <ion-input type="password" required></ion-input>
+      <ion-label class="form-label" position="floating" for="password">Password</ion-label>
+      <ion-input class="form-input" type="password" id="password" required formControlName="password"></ion-input>
+    </ion-item>
+    <ion-item lines="full">
+      <ion-label class="form-label" position="floating" for="repeat_password">Repeat Password</ion-label>
+      <ion-input class="form-input" type="password" id="repeat_password" required formControlName="repeat_password"></ion-input>
     </ion-item>
     <ion-item lines="full">
       <ion-label position="floating">Confirm Password</ion-label>
