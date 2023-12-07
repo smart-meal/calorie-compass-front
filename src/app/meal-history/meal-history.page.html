@@ -1,0 +1,27 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      Meal History
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+ 
+<ion-content>
+  <ion-list lines="full" *ngFor="let day of mealDays">
+    <ion-item-divider color="light">
+      {{ day.date }}
+    </ion-item-divider>
+ 
+    <ion-item *ngFor="let meal of day.meals">
+      <ion-thumbnail slot="start">
+        <ion-img [src]="meal.image"></ion-img>
+      </ion-thumbnail>
+      <ion-label>
+        <h2>{{ meal.name }}</h2>
+        <p>Calories: {{ meal.calories }}</p>
+        <p>Time: {{ meal.time }}</p>
+        <p>Date: {{ meal.date }}</p>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+</ion-content>

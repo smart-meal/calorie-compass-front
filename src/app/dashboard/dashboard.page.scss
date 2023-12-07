@@ -1,0 +1,36 @@
+.profile-picture {
+    width: 50px; /* or your preferred size */
+    height: 50px; /* or your preferred size */
+  }
+
+  .settings {
+    width: 30px; /* or your preferred size */
+    height: 30px; /* or your preferred size */
+  }
+
+  .title{
+    text-align: center;
+    flex: 1 0 auto;
+  }
+
+.button-container {
+    display: grid;
+    grid-template-columns: repeat(n, 1fr);
+    gap: 10px;
+    justify-content: space-evenly; /* Distributes space around items */
+  }
+  
+.button-container ion-button {
+    flex-grow: 1; /* Allows each button to grow and fill the container */
+    margin: 0 5px;
+}
+
+
+.ion-icon {
+  color: rgb(255, 255, 255);
+}
+
+.ion-col.center-any-object {
+  display: flex;
+  justify-content: center;
+  }

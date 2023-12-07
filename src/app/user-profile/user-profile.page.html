@@ -1,0 +1,73 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      User Profile
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+    <ion-card-content>
+      <ion-avatar class="profile-picture">
+        <img src="https://cdn.pixabay.com/photo/2016/04/26/07/57/woman-1353825_1280.png" alt="Profile Picture">
+      </ion-avatar>
+      <ion-card-title> Name </ion-card-title>
+      <!-- <ion-card-subtitle> Email </ion-card-subtitle> -->
+    </ion-card-content>
+  </ion-card>
+
+  <ion-list>
+    <ion-item>
+      <ion-label>First Name</ion-label>
+      <ion-input type="text"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Last Name</ion-label>
+      <ion-input type="text"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Age</ion-label>
+      <ion-input type="number"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Height</ion-label>
+      <ion-input type="decimal"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Weight</ion-label>
+      <ion-input type="decimal" ></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Goal</ion-label>
+      <ion-select placeholder="Select One">
+        <ion-select-option value="maintain_weight">Maintain Weight</ion-select-option>
+        <ion-select-option value="lose_weight">Lose Weight</ion-select-option>
+        <ion-select-option value="gain_weight">Gain Weight</ion-select-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label>Lifestyle</ion-label>
+      <ion-select placeholder="Select One">
+        <ion-select-option value="lazy">Lazy</ion-select-option>
+        <ion-select-option value="sedentary">Sedentary</ion-select-option>
+        <ion-select-option value="active">Active</ion-select-option>
+        <ion-select-option value="moderate">Moderate</ion-select-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label>Allergies</ion-label>
+      <ion-input type="text" ></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Body Type</ion-label>
+      <ion-input type="text" ></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>BMI</ion-label>
+      <ion-input type="decimal" ></ion-input>
+    </ion-item>
+  </ion-list>
+
+  <ion-button expand="full">Save Profile</ion-button>
+</ion-content>
