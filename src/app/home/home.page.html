@@ -1,27 +1,20 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Calorie Compass: A personalized way to track calories
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
- 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
- 
+
+
+<ion-content class="ion-padding">
   <div id="container">
-    <ion-img src="assets/icon/logo.jpg" class="logo-image"></ion-img>
-    <ion-button expand="full" (click)="redirectToLogin()">
+    <ion-img src="assets/icon/CalorieCompassLogo.png" class="logo-image"></ion-img>
+    <h2>Calorie Compass</h2>
+    <p>
+      What ever your nutrition goals are, we help 
+      "point you in the right direction". Start taking care of your health today!
+    </p>
+    <div class="largeDivider"></div>
+    <ion-button id="mainButton"(click)="redirectToLogin()">
       Login
     </ion-button>
     <div class="divider"></div>
-    <ion-button expand="full" (click)="redirectToSignup()">
+    <ion-button fill="outline" id="mainButton" (click)="redirectToSignup()">
       Signup
     </ion-button>
   </div>
 </ion-content>
- 

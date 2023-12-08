@@ -1,3 +1,4 @@
+
 #container {
   text-align: center;
  
@@ -6,6 +7,14 @@
   right: 0;
   top: 50%;
   transform: translateY(-50%);
+}
+
+p {
+  padding: 10px 30px;
+}
+
+#mainButton {
+  width: 250px;
 }
  
 #container strong {
@@ -28,9 +37,16 @@
  
 .divider {
   width: 100%;
-  height: 1px;
-  background-color: #ccc;
-  margin: 10px 0;
+  height: 6px;
+  background-color: #ffffff;
+  margin: px 0;
+}
+
+.largeDivider {
+  width: 100%;
+  height: 60px;
+  background-color: #ffffff;
+  margin: px 0;
 }
 
 ion-title {
@@ -43,9 +59,9 @@ ion-title {
 }
 
 .logo-image {
-  height: 250px; /* Adjust the height as needed */
-  width: auto; /* Maintain aspect ratio */
+  height: 250px; //Adjust the height as needed
+  width: auto; //Maintain aspect ratio
   vertical-align: middle;
-  margin-right: 20px; /* Space between logo and title */
+  margin-right: 20px; //Space between logo and title
   margin-bottom: 50px;
 }
