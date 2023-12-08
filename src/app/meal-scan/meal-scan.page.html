@@ -12,6 +12,6 @@
  
   <div id="button-container">
     <ion-button id="take-picture" expand ="full">Take Picture</ion-button>
-    <ion-button id="upload-existing" expand ="full">Upload Existing</ion-button>
+    <ion-input type="file" id="upload-existing" expand ="full" (change)="imageSelected($event.target.files[0])">Upload Existing</ion-input>
   </div>
 </ion-content>
