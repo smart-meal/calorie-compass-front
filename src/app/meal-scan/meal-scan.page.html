@@ -5,13 +5,53 @@
     </ion-title>
   </ion-toolbar>
 </ion-header>
- 
-<ion-content class="ion-padding">
+
+
+<ion-content>
+ <!--Display uploaded image-->
+  <div *ngIf="displayImage">
+    <ion-img id="uploadImg" src="imageUrl" class="logo-image"></ion-img>
+ </div>
+
+ <!--No display image-->
+ <div *ngIf="!displayImage">
+    <ion-img id="uploadImg2"src="assets/icon/no-preview.png" class="logo-image"></ion-img>
+ </div>
+  <ion-item>
+    <ion-label position="floating">File Name</ion-label>
+    <ion-input [(ngModel)]="textInput" name="textInput" type="text"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="stacked">File Upload</ion-label>
+    <ion-input type="file" id="upload-existing" expand ="full" (change)="imageSelected($event.target.files[0])"></ion-input>
+  </ion-item>
+
+  <ion-button id=test expand="block" (click)="submitForm()">Submit</ion-button>
+
+</ion-content>
+
+
+
+
+
   <!-- Image Preview -->
+
+  <!-----
+<ion-content class="ion-padding">
   <ion-img src="assets/icon/no-preview.png" class="logo-image"></ion-img>
  
   <div id="button-container">
-    <ion-button id="take-picture" expand ="full">Take Picture</ion-button>
+    <ion-button id="take-picture" expand ="full">Upload</ion-button>
+    <ion-button type="file" id="upload-existing" expand ="full" (change)="imageSelected($event.target.files[0])">Upload Existing</ion-button>
+  </div>
+ 
+---->
+
+  <!---
+  <div id="button-container">
+    <ion-button id="take-picture" expand ="full">Upload</ion-button>
     <ion-input type="file" id="upload-existing" expand ="full" (change)="imageSelected($event.target.files[0])">Upload Existing</ion-input>
   </div>
 </ion-content>
+---->
