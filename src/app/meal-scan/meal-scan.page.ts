@@ -33,13 +33,15 @@ export class MealScanPage implements OnInit {
     console.log('File Name:', this.imageFileName);
     this.imageUrl = 'https://caloriecompass.blob.core.windows.net/meals/'+this.imageFileName;
     this.displayImage = true;
+    
+    
     // Simulate an asynchronous operation (e.g., API call) with a delay to give time to azure to load
     // After 5 seconds, display an image from a URL
     setTimeout(() => {
       console.log('File Name:', this.imageUrl);
       //myImage.src = "${this.imageUrl}";
 
-    }, 5000);
+    }, 2000);
   }
 
 
