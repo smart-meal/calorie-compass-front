@@ -26,7 +26,6 @@ export class RegistrationPage implements OnInit {
   });
 
   ngOnInit() {
-    console.log('Registration page initialized.');
   }
 
   SaveData() {
@@ -35,7 +34,6 @@ export class RegistrationPage implements OnInit {
     this.http.post('http://127.0.0.1:5000/auth/register',registrationData)
       .subscribe(
         (response: any) => {
-          console.log('Registration Successfull', response);
           this.navCtrl.navigateForward('/login');
         },
         (error) => {
