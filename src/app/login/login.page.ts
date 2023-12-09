@@ -29,11 +29,10 @@ export class LoginPage implements OnInit {
   SaveData() {
     const loginData = this.loginForm.value;
 
-    this.http.post('http://127.0.0.1:5000/auth/login', loginData)
+    this.http.post('http://127.0.0.1:5000/auth/login', loginData, { withCredentials: true })
       .subscribe(
         (response: any) => {
-          console.log('Login successful:', response);
-          this.navCtrl.navigateForward('/home');
+          this.navCtrl.navigateForward('/ai-chat');
         },
         (error) => {
           console.error('Login failed:', error);
