@@ -1,0 +1,28 @@
+ion-img {
+  width: 90%;
+  height: 50vh;
+  object-fit: contain; 
+  display: block;
+  margin: 0 auto; 
+}
+
+ion-list {
+  margin-top: 20px;
+}
+
+ion-item-divider {
+  font-size: 1.5em;
+  text-align: center; 
+  text-align: center; 
+  padding-top: 10px; 
+  padding-bottom: 10px; 
+}
+
+ion-title {
+  text-align: center;
+  width: 100%;
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}

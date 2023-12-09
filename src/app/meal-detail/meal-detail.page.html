@@ -1,13 +1,36 @@
-<ion-header [translucent]="true">
+<ion-header>
   <ion-toolbar>
-    <ion-title>meal-detail</ion-title>
+    <ion-title>
+      Meal Details
+    </ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">meal-detail</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content class="ion-padding">
+  <ion-img [src]="meal.pictureUrl" alt="Meal Picture"></ion-img>
+
+  <ion-list>
+    <ion-item-divider color="light"><strong>{{ meal.name }}</strong>
+    </ion-item-divider>
+
+    <ion-item>
+      <ion-label><strong>Calories</strong></ion-label>
+      <ion-note slot="end">{{ meal.calories }} kcal</ion-note>
+    </ion-item>
+
+    <ion-item>
+      <ion-label><strong>Proteins</strong></ion-label>
+      <ion-note slot="end">{{ meal.proteins }} g</ion-note>
+    </ion-item>
+
+    <ion-item>
+      <ion-label><strong>Fats</strong></ion-label>
+      <ion-note slot="end">{{ meal.fats }} g</ion-note>
+    </ion-item>
+
+    <ion-item>
+      <ion-label><strong>Carbohydrates</strong></ion-label>
+      <ion-note slot="end">{{ meal.carbs }} g</ion-note>
+    </ion-item>
+  </ion-list>
 </ion-content>
