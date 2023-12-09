@@ -1,5 +1,10 @@
 <ion-header>
   <ion-toolbar>
+    <ion-buttons slot="end">
+      <ion-button class="clear-history-button" (click)="clearChatHistory()">
+        Clear History
+      </ion-button>
+    </ion-buttons>
     <ion-title>
       Personalized AI Assistant
     </ion-title>
@@ -7,14 +12,26 @@
 </ion-header>
  
 <ion-content>
+  <!-- Display Chat Messages -->
   <ion-list lines="none" class="chat-container">
-    <!-- Messages will be dynamically added here -->
-  </ion-list>
-
-  <div id="container">
-    <ion-item>
-      <ion-input placeholder="Type a message..."></ion-input>
-      <ion-button>Send</ion-button>
+    <ion-item *ngFor="let message of messages">
+      <!-- Check the type of the message -->
+      <div *ngIf="message.type === 'user'" class="user-message">
+        User: {{ message.text }}
+      </div>
+      <div *ngIf="message.type === 'assistant'" class="assistant-message">
+        Assistant: {{ message.text }}
+      </div>
     </ion-item>
-  </div>
+  </ion-list>
 </ion-content>
+
+
+<ion-footer>
+  <ion-toolbar>
+    <ion-item>
+      <ion-input [(ngModel)]="newMessage" placeholder="Type a message..."></ion-input>
+      <ion-button (click)="sendMessage(newMessage)">Send</ion-button>
+    </ion-item>
+  </ion-toolbar>
+</ion-footer>
