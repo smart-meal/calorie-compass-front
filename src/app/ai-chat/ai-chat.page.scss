@@ -7,13 +7,12 @@ ion-content {
   
   .chat-container {
     padding: 10px;
+    overflow-y: auto;
     flex-grow: 1; /* Allows chat container to fill the space */
   }
   
   #container {
-    margin-top: 550px;
-    width: 100%;
-    align-self: flex-end;
+    padding: 10px 0; 
   }
   
   .message-bubble {
@@ -42,5 +41,20 @@ ion-content {
     left: 0;
     top: 50%;
     transform: translateY(-50%);
+  }
+
+  ion-footer {
+    ion-toolbar {
+      --background: #fff; /* Set the background color you prefer */
+    }
+  }
+  .clear-history-button {
+    --padding-start: 0;
+    --padding-end: 0;
+    --padding-top: 0;
+    --padding-bottom: 0;
+    --min-height: auto; /* Reduces the height of the button */
+    height: 24px; /* Or any other height you prefer */
+    font-size: 0.8em; /* Smaller font size for the button text */
   }
   
