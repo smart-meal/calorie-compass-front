@@ -21,7 +21,7 @@ export class MealScanPage implements OnInit {
   selectedFile: File;
   displayImage: boolean = false;
   imageFileName: string = "no-preview.png";
-  imageUrl: string;
+  imageUrl: string = 'assets/icon/no-preview.png'; 
   imageUrlDefault: string = "https://caloriecompass.blob.core.windows.net/meals/no-preview.png";
   title: string;
   mealDate: string;
@@ -31,6 +31,9 @@ export class MealScanPage implements OnInit {
 
   constructor(private blobService: AzureBlobStorageService, private http: HttpClient,
     private navCtrl: NavController, private router: Router) { }
+    ngOnInit() {
+    }
+  
 
   submitForm() {
     // You can perform actions with the form data here, such as sending it to a server
@@ -56,26 +59,43 @@ export class MealScanPage implements OnInit {
             console.error('Error submitting meal data:', error);
         });
 
+      }
+      public imageSelected(file: File) {
+        this.selectedFile = file;
     
+        // Display the image
+        const reader = new FileReader();
+        reader.onload = (e: any) => {
+          this.imageUrl = e.target.result;
+          this.displayImage = true;
+        };
+        reader.readAsDataURL(file);
+    
+        // Continue with uploading to Azure
+        this.blobService.uploadImage(this.sas, file, file.name, () => {
+          console.log(`${file.name} uploaded to azure.`);
+        });
+      }
+    }
     
     // Simulate an asynchronous operation (e.g., API call) with a delay to give time to azure to load
     // After 5 seconds, display an image from a URL
-    setTimeout(() => {
-      console.log('File Name:', this.imageUrl);
-      //myImage.src = "${this.imageUrl}";
+  //   setTimeout(() => {
+  //     console.log('File Name:', this.imageUrl);
+  //     //myImage.src = "${this.imageUrl}";
 
-    }, 2000);
-  }
+  //   }, 2000);
+  // }
 
 
-  ngOnInit() {
-  }
+//   ngOnInit() {
+//   }
 
-  public imageSelected(file: File) {
-    this.selectedFile = file;
-    this.blobService.uploadImage(this.sas, file, file.name, () => {
-      console.log(`${file.name} uploaded to azure.`);
-    })
-  }
+//   public imageSelected(file: File) {
+//     this.selectedFile = file;
+//     this.blobService.uploadImage(this.sas, file, file.name, () => {
+//       console.log(`${file.name} uploaded to azure.`);
+//     })
+//   }
 
-}
+// }

@@ -1,7 +1,12 @@
 <ion-header>
   <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button class="header-button" (click)="goToDashboard()">
+        Dashboard
+      </ion-button>
+    </ion-buttons>
     <ion-buttons slot="end">
-      <ion-button class="clear-history-button" (click)="clearChatHistory()">
+      <ion-button class="header-button" (click)="clearChatHistory()">
         Clear History
       </ion-button>
     </ion-buttons>

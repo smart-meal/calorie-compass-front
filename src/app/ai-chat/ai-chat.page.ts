@@ -5,6 +5,7 @@ import { IonicModule } from '@ionic/angular';
 import { HttpClientModule } from '@angular/common/http';
 import { HttpClient } from '@angular/common/http';
 import { ChatService } from '../chat.service';
+import { NavController } from '@ionic/angular';
 
 @Component({
   selector: 'app-ai-chat',
@@ -18,7 +19,7 @@ export class AiChatPage implements OnInit {
   newMessage: string = '';
 
   constructor(private http: HttpClient,
-    private chatService: ChatService) { }
+    private chatService: ChatService, private navCtrl: NavController) { }
 
   ngOnInit() {
     this.loadChatHistory();
@@ -47,5 +48,9 @@ export class AiChatPage implements OnInit {
       this.messages = []; // Clear the local messages array to update the UI
       // Optionally, display a confirmation message or handle errors
     });
+  }
+
+  goToDashboard() {
+    this.navCtrl.navigateRoot('/dashboard');
   }
 }
