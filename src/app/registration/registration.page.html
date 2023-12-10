@@ -10,12 +10,14 @@
   <form [formGroup]="registrationForm" (ngSubmit)="SaveData()">
     <ion-item lines="full">
       <ion-label class="form-label" position="floating" for="username">Username</ion-label>
-      <ion-input class="form-input" type="text" id="username" required formControlName="username"></ion-input>
+      <ion-input class="form-input" #usernameInput (ionChange)="validateUsername(usernameInput.value)" type="text" id="username" required formControlName="username"></ion-input>
     </ion-item>
+    <p *ngIf="usernameError" style="color: red;">{{ usernameError }}</p>
     <ion-item lines="full">
       <ion-label class="form-label" position="floating" for="password">Password</ion-label>
-      <ion-input class="form-input" type="password" id="password" required formControlName="password"></ion-input>
+      <ion-input class="form-input" #passwordInput (ionChange)="validatePassword(passwordInput.value)" type="password" id="password" required formControlName="password"></ion-input>
     </ion-item>
+    <p *ngIf="passwordError" style="color: red;">{{ passwordError }}</p>
     <!-- <ion-item lines="full">
       <ion-label class="form-label" position="floating" for="repeat_password">Repeat Password</ion-label>
       <ion-input class="form-input" type="password" id="repeat_password" required formControlName="repeat_password"></ion-input>
