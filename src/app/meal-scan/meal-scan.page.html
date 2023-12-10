@@ -9,20 +9,30 @@
 
 <ion-content>
  <!--Display uploaded image-->
-    <ion-img id="uploadImg2"src="assets/icon/no-preview.png" class="logo-image"></ion-img>
+    <ion-img [src]="imageUrl" class="logo-image"></ion-img>
 
-  <ion-item>
-    <ion-label position="floating">File Name</ion-label>
-    <ion-input [(ngModel)]="textInput" name="textInput" type="text"></ion-input>
-  </ion-item>
-
-  <ion-item>
-    <ion-label position="stacked">File Upload</ion-label>
-    <ion-input type="file" id="upload-existing" expand ="full" (change)="imageSelected($event.target.files[0])"></ion-input>
-  </ion-item>
+    <ion-item>
+      <ion-label position="floating">Title</ion-label>
+      <ion-input [(ngModel)]="title" name="title" type="text"></ion-input>
+    </ion-item>
+  
+    <ion-item>
+      <ion-label position="floating">Meal Date</ion-label>
+      <ion-input [(ngModel)]="mealDate" name="mealDate" type="date" id="date-input"></ion-input>
+    </ion-item>
+  
+    <ion-item>
+      <ion-label position="floating">Description</ion-label>
+      <ion-textarea [(ngModel)]="description" name="description"></ion-textarea>
+    </ion-item>
+  
+    <ion-item>
+      <ion-label position="stacked">File Upload</ion-label>
+      <ion-input type="file" id="upload-existing" expand="full" (change)="imageSelected($event.target.files[0])"></ion-input>
+    </ion-item>
 
   <ion-button id=open-loading expand="block" (click)="submitForm()">Submit</ion-button>
-  <ion-loading trigger="open-loading" message="Please wait 15 seconds..." duration="15000"></ion-loading>
+  <ion-loading trigger="open-loading" message="Scanning the Image, Please wait 5 seconds..." duration="5000"></ion-loading>
 </ion-content>
 
 
