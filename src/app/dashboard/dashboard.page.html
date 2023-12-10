@@ -74,13 +74,13 @@
     <ion-grid>
       <ion-row>
         <ion-col size="4">
-          <ion-button expand="block" id="home">Dash</ion-button>
+          <ion-button expand="block" id="home" (click)="redirectToMealHistory()">Meal History</ion-button>
         </ion-col>
         <ion-col size="4">
-          <ion-button expand="block" id="add-meal" color="success">Add Meal</ion-button>
+          <ion-button expand="block" id="add-meal" color="success" (click)="redirectToAddMeal()">Add Meal</ion-button>
         </ion-col>
         <ion-col size="4">
-          <ion-button expand="block" id="ai-chat">AI Chat</ion-button>
+          <ion-button expand="block" id="ai-chat" (click)="redirectToAiChat()">AI Chat</ion-button>
         </ion-col>
       </ion-row>
     </ion-grid>

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { CommonModule, Time } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
 import { ActivatedRoute } from '@angular/router';
@@ -15,6 +15,7 @@ export class MealDetailPage {
 
   meal: {
     pictureUrl: string;
+    DateTime: Date;
     name: string;
     fats: number;
     proteins: number;
@@ -26,6 +27,7 @@ export class MealDetailPage {
     // Dummy data for demonstration
     this.meal = {
       pictureUrl: 'assets/icon/breakfast_food.jpg',
+      DateTime: new Date(2023, 0, 1, 12, 0, 0),
       name: "Lunch",
       fats: 10,
       proteins: 20,
