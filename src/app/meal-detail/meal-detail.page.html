@@ -7,11 +7,15 @@
 </ion-header>
 
 <ion-content class="ion-padding">
-  <ion-img [src]="meal.pictureUrl" alt="Meal Picture"></ion-img>
+  <ion-img [src]="meal.image_url" alt="Meal Picture"></ion-img>
 
   <ion-list>
-    <ion-item-divider color="light"><strong>{{ meal.name }}</strong>
-    </ion-item-divider>
+    <ion-item-divider color="light"><strong>{{ meal.title }}</strong></ion-item-divider>
+
+    <ion-item>
+      <ion-label><strong>Weight</strong></ion-label>
+      <ion-note slot="end">{{ meal.weight }} g</ion-note>
+    </ion-item>
 
     <ion-item>
       <ion-label><strong>Calories</strong></ion-label>
@@ -25,12 +29,18 @@
 
     <ion-item>
       <ion-label><strong>Fats</strong></ion-label>
-      <ion-note slot="end">{{ meal.fats }} g</ion-note>
+      <ion-note slot="end">{{ meal.fat }} g</ion-note>
     </ion-item>
 
     <ion-item>
       <ion-label><strong>Carbohydrates</strong></ion-label>
       <ion-note slot="end">{{ meal.carbs }} g</ion-note>
     </ion-item>
+
+    <ion-button expand="block" (click)="goToDashboard()">
+      Go to Dashboard
+    </ion-button>
+
+    <!-- Include additional fields as needed -->
   </ion-list>
 </ion-content>
