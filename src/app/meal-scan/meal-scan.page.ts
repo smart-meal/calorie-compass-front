@@ -31,6 +31,12 @@ export class MealScanPage implements OnInit {
 
   constructor(private blobService: AzureBlobStorageService, private http: HttpClient,
     private navCtrl: NavController, private router: Router) { }
+
+    redirectToDashboard() {
+      // Redirect to the /dashboard page
+      this.router.navigate(['/dashboard']);
+    }
+
     ngOnInit() {
     }
   

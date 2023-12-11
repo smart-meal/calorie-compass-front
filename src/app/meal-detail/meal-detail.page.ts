@@ -48,6 +48,11 @@ export class MealDetailPage {
   constructor(private route: ActivatedRoute, private router: Router, private http: HttpClient,
     private navCtrl: NavController) {}
 
+    redirectToMealScan() {
+      // Redirect to the /dashboard page
+      this.router.navigate(['/meal-scan']);
+    }
+
     // Dummy data for demonstration
     // this.meal = {
     //   pictureUrl: 'assets/icon/breakfast_food.jpg',

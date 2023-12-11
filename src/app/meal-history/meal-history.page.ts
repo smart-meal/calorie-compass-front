@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
+import { Router } from '@angular/router';
  
 @Component({
   selector: 'app-meal-history',
@@ -33,8 +34,12 @@ export class MealHistoryPage implements OnInit {
     // Add more days as needed
   ];
  
-  constructor() {}
- 
+  constructor(private router: Router) {}
+
+  redirectToDashboard() {
+    // Redirect to the /dashboard page
+    this.router.navigate(['/dashboard']);
+  }
 
   ngOnInit() {
     this.updateMealDaysFromJson();
@@ -114,8 +119,6 @@ export class MealHistoryPage implements OnInit {
       }
     });
   }
- 
+
 }
- 
- 
- 
+
