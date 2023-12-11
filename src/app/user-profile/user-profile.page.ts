@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-user-profile',
@@ -10,9 +11,13 @@ import { IonicModule } from '@ionic/angular';
   standalone: true,
   imports: [IonicModule, CommonModule, FormsModule]
 })
-export class UserProfilePage implements OnInit {
+export class UserProfilePage {
+  constructor(private router: Router) {}
 
-  constructor() { }
+  redirectToDashboard() {
+    // Redirect to the /login page
+    this.router.navigate(['/dashboard']);
+  }
 
   ngOnInit() {
   }

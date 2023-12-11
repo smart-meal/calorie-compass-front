@@ -42,6 +42,11 @@ export class DashboardPage implements OnInit {
     // Redirect to the /login page
     this.router.navigate(['/ai-chat']);
   }
+
+  redirectToUserProfile() {
+    // Redirect to the /login page
+    this.router.navigate(['/user-profile']);
+  }
   // You can call this method when the user inputs new meal details.
   // For instance, addMeal('Snack', 'assets/icon/snack_food.jpg', '150', '03:30 PM', '2023-01-02');
 
