@@ -32,7 +32,13 @@ export class LoginPage implements OnInit {
     this.http.post('http://127.0.0.1:5000/auth/login', loginData, { withCredentials: true })
       .subscribe(
         (response: any) => {
-          this.navCtrl.navigateForward('/ai-chat');
+          if (response && response.user_profile && Object.keys(response.user_profile).length > 0) {
+            // User profile has contents, navigate to dashboard
+            this.navCtrl.navigateForward('/dashboard');
+          } else {
+            // User profile is empty, navigate to user-profile
+            this.navCtrl.navigateForward('/user-profile');
+          }
         },
         (error) => {
           console.error('Login failed:', error);

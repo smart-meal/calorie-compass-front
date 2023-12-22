@@ -16,6 +16,7 @@ interface Meal {
   fat: number;
   image_url: string;
   meal_date: string;
+  meal_time:string;
   proteins: number;
   title: string;
   user: string;

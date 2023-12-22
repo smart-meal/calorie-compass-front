@@ -27,42 +27,39 @@
       Macronutrient Intake
     </ion-title>
     <ion-card-content>
-      <!-- Pie Chart and Horizontal Progress Lines -->
-      <!-- Replace the following line with your pie chart component -->
- 
-      <!-- Micronutritional Levels -->
       <ion-label color="primary">Calories</ion-label>
       <ion-item>
-        <ion-progress-bar value="0.95"></ion-progress-bar>
+        <ion-progress-bar value="{{ totalCalories / dailyGoals.calories }}"></ion-progress-bar>
       </ion-item>
-      <ion-label color="primary">Protien</ion-label>
+      <!-- Repeat for other nutrients -->
+      <ion-label color="primary">Proteins</ion-label>
       <ion-item>
-        <ion-progress-bar value="0.5"></ion-progress-bar>
+        <ion-progress-bar value="{{ totalProteins / dailyGoals.proteins }}"></ion-progress-bar>
       </ion-item>
-      <ion-label color="primary">Fats</ion-label>
+      <!-- ... and so on for fats and carbs ... -->
+      <ion-label color="primary">Fat</ion-label>
       <ion-item>
-        <ion-progress-bar value="0.3"></ion-progress-bar>
+        <ion-progress-bar value="{{ totalFat / dailyGoals.fat }}"></ion-progress-bar>
       </ion-item>
-      <ion-label color="primary">Carbohydrates</ion-label>
+      <ion-label color="primary">Carbs</ion-label>
       <ion-item>
-        <ion-progress-bar value="0.15"></ion-progress-bar>
+        <ion-progress-bar value="{{ totalCarbs / dailyGoals.carbs }}"></ion-progress-bar>
       </ion-item>
- 
     </ion-card-content>
   </ion-card>
  
   <!-- Scrollable List of Recent Meals -->
   <ion-item-divider color="light"> Recent Meals</ion-item-divider>
   <ion-list>
-    <ion-item *ngFor="let meal of recentMeals" (click)="openMealDetail(meal.id)">
+    <ion-item *ngFor="let meal of recentMeals" (click)="openMealDetail(meal)">
       <ion-thumbnail slot="start">
-        <ion-img [src]="meal.image"></ion-img>
+        <ion-img [src]="meal.image_url"></ion-img>
       </ion-thumbnail>
       <ion-label>
         <h2>{{ meal.name }}</h2>
         <p>Calories: {{ meal.calories }}</p>
-        <p>Time: {{ meal.time }}</p>
-        <p>Date: {{ meal.date }}</p>
+        <p>Date: {{ meal.meal_date }}</p>
+        <p>Time: {{ meal.meal_time }}</p>
       </ion-label>
     </ion-item>
   </ion-list>

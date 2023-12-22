@@ -1,73 +1,81 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>
-      User Profile
-    </ion-title>
+    <ion-buttons slot="start">
+      <ion-button class="header-button" (click)="goToDashboard()">
+        Dashboard
+      </ion-button>
+    </ion-buttons>
+    <ion-title>User Profile</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  <ion-card>
-    <ion-card-content>
-      <ion-avatar class="profile-picture">
-        <img src="https://cdn.pixabay.com/photo/2016/04/26/07/57/woman-1353825_1280.png" alt="Profile Picture">
-      </ion-avatar>
-      <ion-card-title> Name </ion-card-title>
-      <!-- <ion-card-subtitle> Email </ion-card-subtitle> -->
-    </ion-card-content>
-  </ion-card>
+  <div class="ion-text-center ion-margin-top avatar-container">
+    <ion-avatar class="profile-picture">
+      <img src="https://cdn.pixabay.com/photo/2016/04/26/07/57/woman-1353825_1280.png" alt="Profile Picture">
+    </ion-avatar>
+  </div>
 
-  <ion-list>
+  <ion-list class="ion-padding">
     <ion-item>
-      <ion-label>First Name</ion-label>
-      <ion-input type="text"></ion-input>
+      <ion-label position="stacked">First Name</ion-label>
+      <ion-input type="text" [(ngModel)]="userProfile.first_name" [readonly]="!editMode"></ion-input>
     </ion-item>
     <ion-item>
-      <ion-label>Last Name</ion-label>
-      <ion-input type="text"></ion-input>
+      <ion-label position="stacked">Last Name</ion-label>
+      <ion-input type="text" [(ngModel)]="userProfile.last_name" [readonly]="!editMode"></ion-input>
     </ion-item>
     <ion-item>
-      <ion-label>Age</ion-label>
-      <ion-input type="number"></ion-input>
+      <ion-label position="stacked">Age</ion-label>
+      <ion-input type="number" [(ngModel)]="userProfile.age" [readonly]="!editMode"></ion-input>
     </ion-item>
     <ion-item>
-      <ion-label>Height</ion-label>
-      <ion-input type="decimal"></ion-input>
+      <ion-label position="stacked">Height (cm)</ion-label>
+      <ion-input type="number" [(ngModel)]="userProfile.height" [readonly]="!editMode"></ion-input>
     </ion-item>
     <ion-item>
-      <ion-label>Weight</ion-label>
-      <ion-input type="decimal" ></ion-input>
+      <ion-label position="stacked">Weight (kg)</ion-label>
+      <ion-input type="number" [(ngModel)]="userProfile.weight" [readonly]="!editMode"></ion-input>
     </ion-item>
     <ion-item>
-      <ion-label>Goal</ion-label>
-      <ion-select placeholder="Select One">
-        <ion-select-option value="maintain_weight">Maintain Weight</ion-select-option>
-        <ion-select-option value="lose_weight">Lose Weight</ion-select-option>
-        <ion-select-option value="gain_weight">Gain Weight</ion-select-option>
+      <ion-label position="stacked">Goal</ion-label>
+      <ion-select [(ngModel)]="userProfile.goal" [disabled]="!editMode">
+        <ion-select-option value="Maintain weight">Maintain Weight</ion-select-option>
+        <ion-select-option value="Lose weight">Lose Weight</ion-select-option>
+        <ion-select-option value="Gain weight">Gain Weight</ion-select-option>
       </ion-select>
     </ion-item>
     <ion-item>
-      <ion-label>Lifestyle</ion-label>
-      <ion-select placeholder="Select One">
-        <ion-select-option value="lazy">Lazy</ion-select-option>
-        <ion-select-option value="sedentary">Sedentary</ion-select-option>
-        <ion-select-option value="active">Active</ion-select-option>
-        <ion-select-option value="moderate">Moderate</ion-select-option>
+      <ion-label position="stacked">Lifestyle</ion-label>
+      <ion-select [(ngModel)]="userProfile.lifestyle" [disabled]="!editMode">
+        <ion-select-option value="Lazy">Lazy</ion-select-option>
+        <ion-select-option value="Sedentary">Sedentary</ion-select-option>
+        <ion-select-option value="Active">Active</ion-select-option>
+        <ion-select-option value="Moderate">Moderate</ion-select-option>
       </ion-select>
     </ion-item>
     <ion-item>
-      <ion-label>Allergies</ion-label>
-      <ion-input type="text" ></ion-input>
+      <ion-label position="stacked">Allergies</ion-label>
+      <ion-input type="text" [(ngModel)]="userProfile.allergies" [readonly]="!editMode"></ion-input>
     </ion-item>
     <ion-item>
-      <ion-label>Body Type</ion-label>
-      <ion-input type="text" ></ion-input>
-    </ion-item>
-    <ion-item>
-      <ion-label>BMI</ion-label>
-      <ion-input type="decimal" ></ion-input>
+      <ion-label position="stacked">BMI</ion-label>
+      <ion-input type="number" [(ngModel)]="bmi" readonly></ion-input>
     </ion-item>
   </ion-list>
 
-  <ion-button expand="full" (click)="redirectToDashboard()">Save Profile</ion-button>
+  <div class="ion-padding">
+    <ion-button expand="block" (click)="editMode ? saveProfile() : editProfile()" *ngIf="!editMode">
+      Edit
+    </ion-button>
+    <ion-button expand="block" color="primary" (click)="saveProfile()" *ngIf="editMode">
+      Save
+    </ion-button>
+    <ion-button expand="block" color="medium" (click)="cancelEdit()" *ngIf="editMode">
+      Cancel
+    </ion-button>
+    <ion-button expand="block" color="medium" *ngIf="!editMode" (click)="logout()">
+      Logout
+    </ion-button>
+  </div>
 </ion-content>

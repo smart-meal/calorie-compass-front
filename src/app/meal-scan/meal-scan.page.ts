@@ -26,6 +26,7 @@ export class MealScanPage implements OnInit {
   title: string;
   mealDate: string;
   description: string;
+  mealTime: string;
 
   sas = "sv=2022-11-02&ss=bfqt&srt=sco&sp=rwdlacupiytfx&se=2024-05-31T11:45:28Z&st=2023-12-08T04:45:28Z&spr=https&sig=WkEZIc3AxQsnCAhaaeOcgyrfctNu8tCVyeKbgZbGH8E%3D"
 
@@ -54,12 +55,14 @@ export class MealScanPage implements OnInit {
       title: this.title,
       image_url: this.imageUrl,
       meal_date: this.mealDate,
+      meal_time: this.mealTime,
       description: this.description
     };
     console.log('Sending meal data:', mealData);
     this.http.post('http://127.0.0.1:5000/auth/add_meal', mealData,{ withCredentials: true })
         .subscribe(response => {
             console.log('Meal data submitted:', response);
+            console.log(response)
             this.router.navigate(['/meal-detail'], { state: { meal: response } });
         }, error => {
             console.error('Error submitting meal data:', error);

@@ -21,8 +21,13 @@
     </ion-item>
 
     <ion-item>
-      <ion-label><strong>DateTime</strong></ion-label>
+      <ion-label><strong>Date</strong></ion-label>
       <ion-note slot="end">{{ meal.meal_date }}</ion-note>
+    </ion-item>
+
+    <ion-item>
+      <ion-label><strong>Time</strong></ion-label>
+      <ion-note slot="end">{{ meal.meal_time }}</ion-note>
     </ion-item>
 
     <ion-item>
@@ -46,7 +51,7 @@
     </ion-item>
 
     <ion-button expand="block" (click)="goToDashboard()">
-      Go to Dashboard
+      Dashboard
     </ion-button>
 
     <!-- Include additional fields as needed -->
