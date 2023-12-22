@@ -15,15 +15,15 @@
       {{ day.date }}
     </ion-item-divider>
  
-    <ion-item *ngFor="let meal of day.meals">
+    <ion-item *ngFor="let meal of day.meals" (click)="openMealDetail(meal)">
       <ion-thumbnail slot="start">
-        <ion-img [src]="meal.image"></ion-img>
+        <ion-img [src]="meal.image_url"></ion-img> <!-- Bind image source here -->
       </ion-thumbnail>
       <ion-label>
         <h2>{{ meal.name }}</h2>
         <p>Calories: {{ meal.calories }}</p>
-        <p>Time: {{ meal.time }}</p>
-        <p>Date: {{ meal.date }}</p>
+        <p>Date: {{ meal.meal_date }}</p>
+        <p>Time: {{ meal.meal_time }}</p>
       </ion-label>
     </ion-item>
   </ion-list>

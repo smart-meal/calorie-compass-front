@@ -20,14 +20,14 @@ import { AlertController } from '@ionic/angular';
 })
 export class UserProfilePage implements OnInit {
   userProfile = {
-    first_name: '',
-    last_name: '',
+    first_name: "",
+    last_name: "",
     age: 0,
     height: 0,
     weight: 0,
-    goal: '',
-    lifestyle: '',
-    allergies: ''
+    goal: "",
+    lifestyle: "",
+    allergies: ""
   };
   bmi: number;
 
@@ -60,6 +60,7 @@ export class UserProfilePage implements OnInit {
     if (this.editMode) {
       this.http.post('http://127.0.0.1:5000/auth/profile', this.userProfile, { withCredentials: true }).subscribe(
         (response: any) => {
+          console.log(this.userProfile)
           console.log('Profile updated successfully.', response);
           this.editMode = false;
           this.bmi = response.bmi;  // Update the BMI value here
@@ -72,6 +73,15 @@ export class UserProfilePage implements OnInit {
       );
     }
   }
+
+  logout() {
+    // Navigate to the logout URL
+    this.http.post('http://127.0.0.1:5000/auth/logout', this.userProfile, { withCredentials: true }).subscribe(
+        (response: any) => {
+          this.router.navigate(['/home']);
+
+  })
+}
 
   cancelEdit() {
     // Logic to cancel the edit operation

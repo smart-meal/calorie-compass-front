@@ -14,38 +14,10 @@ import { NavController } from '@ionic/angular';
   imports: [IonicModule, CommonModule, FormsModule, ReactiveFormsModule, HttpClientModule]
 })
 export class RegistrationPage implements OnInit {
-  password: string = '';
-  passwordError: string = '';
-
-  username: string = '';
-  usernameError: string = '';
- 
-  validateUsername(username: string) {
-    // You can reference the password directly
-    if (username.length < 8) {
-      this.usernameError = 'Username must be at least 8 characters long';
-    } else {
-      this.usernameError = '';
-    }
-  }
- 
-  validatePassword(password: string) {
-    // You can reference the password directly
-    const alphanumericRegex = /^(?=.*[a-zA-Z])(?=.*\d)[a-zA-Z\d]+$/;
-    if (password.length < 8) {
-      this.passwordError = 'Password must be at least 8 characters long';
-    } else if (!alphanumericRegex.test(password)){
-      this.passwordError = 'Password must be alphanumeric';
-    } else {
-      this.passwordError = '';
-    }
-  }
-
   constructor(
     private http: HttpClient,
     private navCtrl: NavController
   ) { }
-
 
   registrationForm = new FormGroup({
     username: new FormControl(''),
@@ -54,6 +26,7 @@ export class RegistrationPage implements OnInit {
   });
 
   ngOnInit() {
+    console.log('Registration page initialized.');
   }
 
   SaveData() {
@@ -62,6 +35,7 @@ export class RegistrationPage implements OnInit {
     this.http.post('http://127.0.0.1:5000/auth/register',registrationData)
       .subscribe(
         (response: any) => {
+          console.log('Registration Successfull', response);
           this.navCtrl.navigateForward('/login');
         },
         (error) => {

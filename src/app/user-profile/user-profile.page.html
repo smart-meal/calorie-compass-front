@@ -40,18 +40,18 @@
     <ion-item>
       <ion-label position="stacked">Goal</ion-label>
       <ion-select [(ngModel)]="userProfile.goal" [disabled]="!editMode">
-        <ion-select-option value="maintain_weight">Maintain Weight</ion-select-option>
-        <ion-select-option value="lose_weight">Lose Weight</ion-select-option>
-        <ion-select-option value="gain_weight">Gain Weight</ion-select-option>
+        <ion-select-option value="Maintain weight">Maintain Weight</ion-select-option>
+        <ion-select-option value="Lose weight">Lose Weight</ion-select-option>
+        <ion-select-option value="Gain weight">Gain Weight</ion-select-option>
       </ion-select>
     </ion-item>
     <ion-item>
       <ion-label position="stacked">Lifestyle</ion-label>
       <ion-select [(ngModel)]="userProfile.lifestyle" [disabled]="!editMode">
-        <ion-select-option value="lazy">Lazy</ion-select-option>
-        <ion-select-option value="sedentary">Sedentary</ion-select-option>
-        <ion-select-option value="active">Active</ion-select-option>
-        <ion-select-option value="moderate">Moderate</ion-select-option>
+        <ion-select-option value="Lazy">Lazy</ion-select-option>
+        <ion-select-option value="Sedentary">Sedentary</ion-select-option>
+        <ion-select-option value="Active">Active</ion-select-option>
+        <ion-select-option value="Moderate">Moderate</ion-select-option>
       </ion-select>
     </ion-item>
     <ion-item>
@@ -73,6 +73,9 @@
     </ion-button>
     <ion-button expand="block" color="medium" (click)="cancelEdit()" *ngIf="editMode">
       Cancel
+    </ion-button>
+    <ion-button expand="block" color="medium" *ngIf="!editMode" (click)="logout()">
+      Logout
     </ion-button>
   </div>
 </ion-content>
